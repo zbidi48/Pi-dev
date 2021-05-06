@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="my-5">
+
+    <div class="add-product-form">
+      <a href="#" (click)="back()" >back</a>
+
+      <h3>add bills </h3>
+      <form [formGroup]="addbillsform" (ngSubmit)="addbills()">
+
+        <div class="form-group>">
+          <label >type</label>
+          <input type="text" class="form-control" placeholder="type" formControlName="type">
+
+        </div>
+        <div class="form-group>">
+          <label >amount</label>
+          <input type="number" class="form-control" placeholder="amount" formControlName="amount">
+
+        </div>
+        <div class="form-group>">
+          <label >clientid</label>
+          <input type="number" class="form-control" placeholder="clientid" formControlName="client_id">
+
+        </div>
+        <div class="form-group>">
+          <select class="form-control" formControlName="client_id" >
+            <option value="">CHoisir un client convenable</option>
+            <option value="{{c.id}}" *ngFor="let c of clients ">{{c.lastname}} </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-warning" type="submit" >
+            add bills
+          </button>
+        </div>
+
+
+
+      </form>
+    </div>
+  </div>
+</div>

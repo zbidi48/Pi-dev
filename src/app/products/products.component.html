@@ -1,0 +1,58 @@
+<div class="my-2 container">
+  <div class="text-center">
+    <h1>
+     liste de produits
+    </h1>
+
+  </div>
+  <hr>
+  <div >
+
+    <div class="row my-3">
+      <div class="col-sm-12">
+        <button routerLink="/add" class="btn btn-primary"  >
+          add product
+        </button>
+
+      </div>
+
+    </div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>name</th>
+        <th>price</th>
+        <th>weight</th>
+        <th (click)="sortBy(1)">quantity</th>
+        <th>date</th>
+        <th> action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let j of Prodducts">
+        <td>{{j.idProduct}}</td>
+        <td>{{j.name}}</td>
+        <td>{{j.price}}</td>
+        <td>{{j.weight}}</td>
+        <td>{{j.quantity}}</td>
+        <td>{{j.date}}</td>
+        <td>
+          <a class="btn btn-sm btn-primary" style="margin-right:5px;" [routerLink]="'/edit/'+j.idProduct" >modifier</a>
+          <a class="btn btn-sm btn-danger"  (click)="deleteprod(j.idProduct)" >supprimer</a>
+        </td>
+
+
+
+
+
+
+      </tr>
+      </tbody>
+
+    </table>
+
+
+  </div>
+
+</div>

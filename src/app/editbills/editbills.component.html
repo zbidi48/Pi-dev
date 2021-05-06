@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="my-5">
+    <div class="edit-bills-form">
+      <a href="#" (click)="back()"></a>
+      <h3>edit product</h3>
+      <form [formGroup]="editbillsform" (ngSubmit)="editbills()">
+
+        <div class="form-group>">
+          <label >amount</label>
+          <input type="text" class="form-control" placeholder="mantantfacture" formControlName="amount"/>
+
+        </div>
+        <div class="form-group>">
+          <label >type</label>
+          <input type="text" class="form-control" placeholder="typefacture" formControlName="type"/>
+
+        </div>
+
+
+
+        <div class="form-group">
+          <button class="btn btn-info" type="submit" >
+            edit product
+          </button>
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+</div>

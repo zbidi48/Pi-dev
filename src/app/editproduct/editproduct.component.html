@@ -1,0 +1,58 @@
+<div class="container">
+
+  <div class="my-5">
+    <div class="edit-product-form">
+      <a href="#" (click)="back()"></a>
+      <h3>edit product</h3>
+      <form [formGroup]="editproductform" (ngSubmit)="editprod()">
+
+        <div class="form-group>">
+          <label >name</label>
+          <input type="text" class="form-control" placeholder="nomproduit" formControlName="name">
+
+        </div>
+        <div class="form-group>">
+          <label >price</label>
+          <input type="number" class="form-control" placeholder="prixproduit" formControlName="price">
+
+        </div>
+        <div class="form-group>">
+          <label >quantity</label>
+          <input type="number" class="form-control" placeholder="quantiteproduit" formControlName="quantity">
+
+        </div>
+        <div class="form-group>">
+          <label >date</label>
+          <input type="date" class="form-control" placeholder="dateproduit" formControlName="date">
+
+        </div>
+        <div class="form-group>">
+          <label >weight</label>
+          <input type="number" class="form-control" placeholder="weightproduit" formControlName="weight">
+
+        </div>
+        <div class="form-group>">
+          <select class="form-control" formControlName="categuorie_id" >
+            <option value="">CHoisir une catégorie</option>
+            <option value="{{c.id}}" *ngFor="let c of categories ">{{c.name}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-info" type="submit" >
+            edit products
+          </button>
+        </div>
+        <div class="form-group">
+          <div class="alert alert-success" *ngIf="succesmesg !=''">
+            {{succesmesg}}
+          </div>
+          <div class="alert alert-danger" *ngIf="eurrormsg !=''">
+            {{eurrormsg}}
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
