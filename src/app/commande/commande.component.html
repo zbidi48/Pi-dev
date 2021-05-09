@@ -1,0 +1,97 @@
+<div class="my-2 container">
+  <div class="text-center">
+    <h1>
+      liste de commande
+    </h1>
+
+  </div>
+  <hr>
+  <div >
+
+    <div class="row my-3">
+      <div class="col-sm-12">
+        <button routerLink="/addcommande" class="btn btn-primary"  >
+          add commande
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <form [formGroup]="filterForm" (ngSubmit)="search()">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group ">
+            <label>Type method:</label>
+            <select class="form-control" formControlName="idPay">
+              <option value="-1">Tous les method</option>
+              <option value="{{c.id}}" *ngFor="let c of payments">{{c.name}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group ">
+            <label>Client:</label>
+            <select class="form-control" formControlName="idProd">
+              <option value="-1">Tous les clients</option>
+              <option value="{{c.id}}" *ngFor="let c of clients">{{c.firstname}}</option>
+
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-5">
+        <button class="btn btn-info" type="submit">Rechercher</button>
+      </div>
+    </form>
+
+
+
+
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>datecomande</th>
+        <th>type de payement</th>
+        <th>client</th>
+        <th >produit</th>
+        <th>quantite</th>
+
+        <th>actions</th>
+
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let j of commandes">
+        <td>{{ j.idcomande }}</td>
+        <td> {{j.datecomande | date}}</td>
+        <td>{{j.methodepay.name}}</td>
+        <td>{{j.client.firstname}} {{j.client.lastname}}</td>
+        <td>{{j.produit.name}}</td>
+        <td>{{j.quantity}}</td>
+
+        <td>
+          <a class="btn btn-sm btn-primary" style="margin-right:5px;" [routerLink]="'/editcommmand/'+j.idcomande" >modifier</a>
+          <a class="btn btn-sm btn-danger"  (click)="deletecmd(j.idcomande)" >supprimer</a>
+        </td>
+
+
+
+
+
+
+      </tr>
+      </tbody>
+
+    </table>
+
+
+  </div>
+
+</div>
+
+

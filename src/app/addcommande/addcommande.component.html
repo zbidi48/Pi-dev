@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="my-5">
+
+    <div class="add-commande-form">
+      <a href="#" (click)="back()" > Back </a>
+
+      <h3>add commande</h3>
+      <form [formGroup]="addcommandeform" (ngSubmit)="addcmd()">
+
+        <div class="form-group>">
+          <label >date commande</label>
+          <input type="date" class="form-control" placeholder="datecommande" formControlName="datecomande">
+
+        </div>
+
+        <div class="form-group>">
+          <select class="form-control" formControlName="idpayementtype" >
+            <option value="">methode de payement</option>
+            <option value="{{c.id}}" *ngFor="let c of payment">{{c.name}}</option>
+          </select>
+        </div>
+
+        <div class="form-group>">
+          <label >quantite</label>
+          <input type="number" class="form-control" placeholder="quantite" formControlName="quantity">
+
+        </div>
+
+
+        <div class="form-group>">
+          <label >typedepay</label>
+          <input type="text" class="form-control" placeholder="" formControlName="typedepay">
+
+        </div>
+        <div class="form-group">
+          <select class="form-control" formControlName="idclient" >
+            <option value="">client</option>
+            <option value="{{c.id}}" *ngFor="let c of clients">{{c.lastname}} {{c.firstname}}</option>
+          </select>
+        </div>
+        <div class="form-group>">
+          <select class="form-control" formControlName="idproduit" >
+            <option value="">produit</option>
+            <option value="{{c.id}}" *ngFor="let c of produits">{{c.name}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-warning" type="submit" >
+            add commande
+          </button>
+        </div>
+
+        <div class="form-group">
+          <div class="alert alert-success" *ngIf="succesmesg !=''">
+            {{succesmesg}}
+          </div>
+          <div class="alert alert-danger" *ngIf="eurrormsg !=''">
+            {{eurrormsg}}
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+

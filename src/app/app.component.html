@@ -1,21 +1,63 @@
 
-<div class="container">
-  <ul class="nav">
-    <li class="nav-item">
-      <a style="color: red" class="nav-link" routerLink="/products">PRODUIT</a>
 
 
-    </li>
-    <li class="nav-item">
-      <a  style="color: red" class="nav-link" routerLink="/bills">FACTURE</a>
-    </li>
-    <li class="nav-item">
-      <a style="color: red" class="nav-link" routerLink="/categorie">CATEGORIE</a>
-    </li>
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+  <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+  <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+  <!-- Navbar Search-->
+
+  <!-- Navbar-->
+
+</nav>
+<div id="layoutSidenav">
+  <div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
+      <div class="sb-sidenav-menu">
+        <div class="nav">
+          <div class="sb-sidenav-menu-heading">Core</div>
+          <a class="nav-link" routerLink="/products">
+            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+            PRODUIT
+          </a>
+
+          <a class="nav-link" routerLink="/bills">
+            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+            FACTURE
+          </a>
+          <a class="nav-link" routerLink="/categorie">
+            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+            CATEGORIE
+          </a>
 
 
-  </ul>
-  <router-outlet></router-outlet>
 
 
+
+        </div>
+      </div>
+      <div class="sb-sidenav-footer">
+        <div class="small">Logged in as:</div>
+        Start Bootstrap
+      </div>
+    </nav>
+  </div>
+  <div id="layoutSidenav_content">
+    <main>
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+    <footer class="py-4 bg-light mt-auto">
+      <div class="container-fluid">
+        <div class="d-flex align-items-center justify-content-between small">
+          <div class="text-muted">Copyright &copy; Your Website 2021</div>
+          <div>
+            <a href="#">Privacy Policy</a>
+            &middot;
+            <a href="#">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 </div>

@@ -10,6 +10,12 @@ import { EditbillsComponent } from './editbills/editbills.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { AddcategorieComponent } from './addcategorie/addcategorie.component';
 import { EditcategorieComponent } from './editcategorie/editcategorie.component';
+import { ClientComponent } from './client/client.component';
+import { AddclientComponent } from './addclient/addclient.component';
+import { EditclientComponent } from './editclient/editclient.component';
+import { CommandeComponent } from './commande/commande.component';
+import { AddcommandeComponent } from './addcommande/addcommande.component';
+import { EditcommandeComponent } from './editcommande/editcommande.component';
 
 
 const routes: Routes = [
@@ -22,7 +28,13 @@ const routes: Routes = [
   {path:'editbills/:id', component: EditbillsComponent },
   {path:'categorie', component: CategorieComponent},
   {path:'addcategorie' ,component: AddcategorieComponent},
-  {path:'editcategorie/:id' ,component:EditcategorieComponent }
+  {path:'editcategorie/:id' ,component:EditcategorieComponent },
+  {path:'client' , component: ClientComponent},
+  {path: 'addclient', component: AddclientComponent},
+  {path: 'editclient/:id' , component: EditclientComponent},
+  {path: 'commande' , component: CommandeComponent},
+  {path: 'addcommande', component: AddcommandeComponent},
+  {path: 'editcommmand/:id' , component:  EditcommandeComponent}
 
 
 

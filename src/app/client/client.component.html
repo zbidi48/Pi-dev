@@ -1,0 +1,58 @@
+<div class="my-2 container">
+  <div class="text-center">
+    <h1>
+      liste de client
+    </h1>
+
+  </div>
+  <hr>
+  <div >
+
+    <div class="row my-3">
+      <div class="col-sm-12">
+        <button routerLink="/addclient" class="btn btn-primary"  >
+          add client
+        </button>
+
+      </div>
+
+    </div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>lastname</th>
+        <th>firstname</th>
+        <th>garder</th>
+
+        <th>psw</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let j of clients">
+        <td>{{j.id}}</td>
+        <td>{{j.lastname}}</td>
+        <td>{{j.firstname}}</td>
+        <td>{{j.garder}}</td>
+        <td>{{j.psw}}</td>
+
+        <td>
+          <a class="btn btn-sm btn-primary" style="margin-right:5px;" [routerLink]="'/editclient/'+j.id" >modifier</a>
+          <a class="btn btn-sm btn-danger"  (click)="deleteclient(j.id)" >supprimer</a>
+        </td>
+
+
+
+
+
+
+      </tr>
+      </tbody>
+
+    </table>
+
+
+  </div>
+
+</div>

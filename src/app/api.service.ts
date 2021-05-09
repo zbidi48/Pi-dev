@@ -21,7 +21,12 @@ export class ApiService {
   getclients(){
     return this.http.get<Array<any>>('http://127.0.0.1:8082/client/list')
   }
-
+  getcommande(){
+    return this.http.get<Array<any>>('http://127.0.0.1:8082/commande/list')
+  }
+  getmethodepay(){
+    return this.http.get<Array<any>>('http://127.0.0.1:8082/methodepay/list')
+  }
   // tslint:disable-next-line:typedef
   addproduct(productData){
     const httpoption  = {
@@ -47,6 +52,22 @@ export class ApiService {
     };
     return this.http.post('http://127.0.0.1:8082/categorie/add', billsData, httpoption);
   }
+  addclient(clientData){
+    const httpoption  = {
+      headers: new HttpHeaders({
+        'content-type': 'application/json'
+      })
+    };
+    return this.http.post('http://127.0.0.1:8082/client/add', clientData, httpoption);
+  }
+  addcommande(cmdData){
+    const httpoption  = {
+      headers: new HttpHeaders({
+        'content-type': 'application/json'
+      })
+    };
+    return this.http.post('http://127.0.0.1:8082/commande/add', cmdData, httpoption);
+  }
   getprodutbyid(id)
   {
 
@@ -59,6 +80,14 @@ export class ApiService {
   getcatbyid(id) {
 
     return this.http.get('http://127.0.0.1:8082/categorie/detailcategorie/'+id)
+  }
+  getclientbyid(id) {
+
+    return this.http.get('http://127.0.0.1:8082/client/detailclient/'+id)
+  }
+  getcommandebyid(id) {
+
+    return this.http.get('http://127.0.0.1:8082/commande/detailcommande/'+id)
   }
   updatecategorie(categoriedata,id)
   {
@@ -88,6 +117,24 @@ export class ApiService {
     };
     return this.http.post('http://127.0.0.1:8082/bills/update/'+id,billdata,httpoption);
   }
+  updateclient(clientdata,id)
+  {
+    const httpoption  = {
+      headers: new HttpHeaders({
+        'content-type': 'application/json'
+      })
+    };
+    return this.http.post('http://127.0.0.1:8082/client/update/'+id,clientdata,httpoption);
+  }
+  updatecommande(cmddata,id)
+  {
+    const httpoption  = {
+      headers: new HttpHeaders({
+        'content-type': 'application/json'
+      })
+    };
+    return this.http.post('http://127.0.0.1:8082/commande/update/'+id,cmddata,httpoption);
+  }
   deleteprodbyid(id)
   {
     return this.http.get('http://127.0.0.1:8082/product/delete/'+id)
@@ -104,9 +151,18 @@ export class ApiService {
   {
     return this.http.get<Array<any>>('http://127.0.0.1:8082/bills/list')
   }
+
   deletebillsbyid(id)
   {
     return this.http.get('http://127.0.0.1:8082/bills/delete/'+id)
+  }
+  deleteclientbyid(id)
+  {
+    return this.http.get('http://127.0.0.1:8082/client/delete/'+id)
+  }
+  deletecommandetbyid(id)
+  {
+    return this.http.get('http://127.0.0.1:8082/commande/delete/'+id)
   }
 
   filtragefactpartype(data)
@@ -116,6 +172,11 @@ export class ApiService {
   triefacture()
   {
     return this.http.get('http://127.0.0.1:8082/bills/list/trierfacture')
+  }
+
+  filterCommande(idTypePay,idProd){
+
+    return this.http.get('http://127.0.0.1:8082/commande/list/filter/'+idTypePay+'/'+idProd)
   }
 
 

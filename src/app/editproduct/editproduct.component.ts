@@ -32,11 +32,12 @@ export class EditproductComponent implements OnInit {
   ngOnInit(): void {
     this.getcategorie();
 
+
   }
   getproductdata()
   {
-    console.log("test",this.path.snapshot.params.id);
-    const id=this.path.snapshot.data.params.id;
+    /*console.log("test",this.path.snapshot.params.id);
+    const id=this.path.snapshot.params.id;
 
     this.api.getprodutbyid(id).subscribe((data:any)=>{
       this.editproductform.setValue({
@@ -48,12 +49,12 @@ export class EditproductComponent implements OnInit {
       categuorie_id:data.categuorie_id
       })
       this.wait=false;
-    });
+    });*/
   }
 
   editprod()
   {
-    const id=this.path.snapshot.data.params.id;
+    const id=this.path.snapshot.params.id;
     this.succesmesg = '';
     this.eurrormsg = '';
     this.api.updateprod(this.editproductform.value,id).subscribe((data: any)=>

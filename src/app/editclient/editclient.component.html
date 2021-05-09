@@ -1,0 +1,50 @@
+<div class="container">
+
+  <div class="my-5">
+    <div class="edit-client-form">
+      <a href="#" (click)="back()"></a>
+      <h3>edit client</h3>
+      <form [formGroup]="editclientform" (ngSubmit)="editclients()">
+
+        <div class="form-group>">
+          <label >lastname</label>
+          <input type="text" class="form-control" placeholder="nomclient" formControlName="lastname">
+
+        </div>
+        <div class="form-group>">
+          <label >firstname</label>
+          <input type="textr" class="form-control" placeholder="prenonclient" formControlName="firstname">
+
+        </div>
+        <div class="form-group>">
+          <label >garder</label>
+          <input type="text" class="form-control" placeholder="grade" formControlName="garder">
+
+        </div>
+
+        <div class="form-group>">
+          <label >psw</label>
+          <input type="text" class="form-control" placeholder="mot de passe" formControlName="psw">
+
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-info" type="submit" >
+            edit client
+          </button>
+        </div>
+        <div class="form-group">
+          <div class="alert alert-success" *ngIf="succesmesg !=''">
+            {{succesmesg}}
+          </div>
+          <div class="alert alert-danger" *ngIf="eurrormsg !=''">
+            {{eurrormsg}}
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+

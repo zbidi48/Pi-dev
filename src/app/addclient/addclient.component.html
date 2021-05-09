@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="my-5">
+
+    <div class="add-client-form">
+      <a href="#" (click)="back()" > Back </a>
+
+      <h3>add client</h3>
+      <form [formGroup]="addclientform" (ngSubmit)="addclients()">
+
+        <div class="form-group>">
+          <label >lastname</label>
+          <input type="text" class="form-control" placeholder="nomproduit" formControlName="lastname">
+
+        </div>
+        <div class="form-group>">
+          <label >firstname</label>
+          <input type="text" class="form-control" placeholder="prixproduit" formControlName="firstname">
+
+        </div>
+        <div class="form-group>">
+          <label >garder</label>
+          <input type="text" class="form-control" placeholder="grade" formControlName="garder">
+
+        </div>
+
+        <div class="form-group>">
+          <label >psw</label>
+          <input type="text" class="form-control" placeholder="mot de passe" formControlName="psw">
+
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-warning" type="submit" >
+            add client
+          </button>
+        </div>
+        <div class="form-group">
+          <div class="alert alert-success" *ngIf="succesmesg !=''">
+            {{succesmesg}}
+          </div>
+          <div class="alert alert-danger" *ngIf="eurrormsg !=''">
+            {{eurrormsg}}
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
