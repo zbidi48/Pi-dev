@@ -50,7 +50,7 @@ export class ApiService {
         'content-type': 'application/json'
       })
     };
-    return this.http.post('http://127.0.0.1:8082/categorie/add', billsData, httpoption);
+    return this.http.post('http://127.0.0.1:8082/bills/add', billsData, httpoption);
   }
   addclient(clientData){
     const httpoption  = {

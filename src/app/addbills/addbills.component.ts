@@ -24,7 +24,7 @@ export class AddbillsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getclient();
-    this.addbills();
+
 
   }
   addbills() {
